@@ -613,33 +613,91 @@ body {
 }
 
 /* Media Queries for Responsive Design */
-@media (max-width: 768px) {
+
+/* For tablets and small laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
     .navbar {
-        padding: 0.5rem 1rem;
+        width: 50%; /* Adjust navbar width */
+        padding: 1rem; /* Adjust padding */
     }
 
-    .logo-img {
-        width: 100px;
-        height: 100px;
+    .hero-content {
+        padding: 40px; /* Reduce padding */
+        max-width: 90%; /* Allow more width */
     }
 
-    .nav-links {
-        gap: 1rem;
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust card size */
     }
 
-    .nav-links a {
-        font-size: 1rem;
-        padding: 0.3rem 0.5rem;
+    .text-title {
+        font-size: 1.5em; /* Adjust title size */
+    }
+
+    .text-body {
+        font-size: 0.9em; /* Adjust body text size */
     }
 }
 
-@media (max-width: 480px) {
+/* For mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 1rem; /* Adjust padding */
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .logo-img {
+        width: 80px; /* Adjust logo size */
+        height: 80px; /* Adjust logo size */
+    }
+
     .nav-links {
-        gap: 0.5rem;
+        gap: 1rem; /* Adjust gap */
     }
 
     .nav-links a {
-        font-size: 0.9rem;
-        padding: 0.2rem 0.4rem;
+        font-size: 1rem; /* Adjust font size */
+        padding: 0.3rem 0.5rem; /* Adjust padding */
+    }
+
+    .hero-content {
+        padding: 20px; /* Reduce padding */
+    }
+
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjust card size */
+    }
+}
+
+/* For very small devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .navbar {
+        width: 65%; /* Full width */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 0.5rem; /* Adjust gap */
+    }
+
+    .nav-links a {
+        font-size: 0.9rem; /* Adjust font size */
+        padding: 0.2rem 0.4rem; /* Adjust padding */
+    }
+
+    .hero-content {
+        padding: 10px; /* Reduce padding */
+    }
+
+    .card-container {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .text-title {
+        font-size: 1.2em; /* Adjust title size */
+    }
+
+    .text-body {
+        font-size: 0.8em; /* Adjust body text size */
     }
 }
