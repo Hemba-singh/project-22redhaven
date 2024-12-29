@@ -1381,7 +1381,7 @@ body {
 
 
 /* Responsive Styles for 320x689 screens */
-@media (max-width: 320px) and (max-height: 689px) {
+@media screen and (max-width: 320px) {
     body {
         font-size: 0.9rem; /* Adjust base font size for smaller screens */
     }
