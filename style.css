@@ -1378,3 +1378,82 @@ body {
     opacity: 1;
     transform: scale(0.5);
 }
+
+
+/* Responsive Styles for 320x689 screens */
+@media (max-width: 320px) and (max-height: 689px) {
+    body {
+        font-size: 0.9rem; /* Adjust base font size for smaller screens */
+    }
+
+    .navbar {
+        width: 100%; /* Full width for navbar */
+        height: 50px; /* Adjust height for navbar */
+        padding: 0.5rem; /* Reduce padding */
+    }
+
+    .logo-img {
+        height: 40px; /* Adjust logo size */
+    }
+
+    .nav-links a {
+        font-size: 1.2rem; /* Adjust font size for nav links */
+        padding: 5px 10px; /* Adjust padding */
+    }
+
+    .hero-content h1 {
+        font-size: 4rem; /* Adjust hero heading size */
+        margin: 20px; /* Adjust margin */
+    }
+
+    .hero-content p {
+        font-size: 1.5rem; /* Adjust hero paragraph size */
+    }
+
+    .about-section {
+        padding: 20px 0; /* Reduce padding */
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack images vertically */
+    }
+
+    .center-image img,
+    .right-image img,
+    .left-image img {
+        width: 150px; /* Adjust image size */
+        height: 150px; /* Adjust image size */
+    }
+
+    .featured-heading h2 {
+        font-size: 30px; /* Adjust featured heading size */
+    }
+
+    .first-card, .second-card, .third-card {
+        width: 90%; /* Make cards responsive */
+        margin: 10px 0; /* Add margin between cards */
+    }
+
+    .contact-section {
+        padding: 10px 20px; /* Adjust padding */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    .footer {
+        padding: 20px 0; /* Adjust footer padding */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Stack footer content */
+    }
+
+    .map-links,
+    .social-links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px; /* Adjust gap */
+    }
+}
