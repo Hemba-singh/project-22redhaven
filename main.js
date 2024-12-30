@@ -10,13 +10,25 @@ function initScrollTrigger() {
     ScrollTrigger.scrollerProxy("[data-scroll-container]", {
         scrollTop(value) {
             return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-},
+        },
 
         getBoundingClientRect() {
             return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
         },
 
         pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed"
+    });
+
+    // Add .is-visible class to [data-scroll-section] elements when they come into view
+    const sections = document.querySelectorAll("[data-scroll-section]");
+    sections.forEach((section) => {
+        ScrollTrigger.create({
+            trigger: section,
+            start: "top 80%", // adjust the start position to your liking
+            end: "bottom 20%", // adjust the end position to your liking
+            onEnter: () => section.classList.add("is-visible"),
+            onLeaveBack: () => section.classList.remove("is-visible")
+        });
     });
 }
 
