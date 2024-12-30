@@ -10,10 +10,12 @@ function initScrollTrigger() {
     ScrollTrigger.scrollerProxy("[data-scroll-container]", {
         scrollTop(value) {
             return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-        },
+},
+
         getBoundingClientRect() {
             return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
         },
+
         pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed"
     });
 }
@@ -60,9 +62,9 @@ function initAnimations() {
     });
 
     // Menu items stagger animation
-    gsap.from('.menu-item', {
+    gsap.from('.second-hero', {
         scrollTrigger: {
-            trigger: '.menu-section',
+            trigger: '.second-home',
             scroller: '[data-scroll-container]',
             start: 'top center+=100',
             toggleActions: 'play none none reverse'
@@ -146,40 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
         delay: 0.5
     });
 
-    // Menu Items Animation
-    gsap.from('.menu-item', {
-        scrollTrigger: {
-            trigger: '.menu-section',
-            start: 'top center+=100',
-            toggleActions: 'play none none reverse'
-        },
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2
-    });
-
-    // About Section Animation
-    gsap.from('.about-image', {
-        scrollTrigger: {
-            trigger: '.about-section',
-            start: 'top center+=100'
-        },
-        x: -50,
-        opacity: 0,
-        duration: 1
-    });
-
-    gsap.from('.about-text', {
-        scrollTrigger: {
-            trigger: '.about-section',
-            start: 'top center+=100'
-        },
-        x: 50,
-        opacity: 0,
-        duration: 1
-    });
-});
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -326,4 +294,4 @@ document.addEventListener('DOMContentLoaded', () => {
     initMenuFiltering();
     initContactForm();
 });
-
+});
