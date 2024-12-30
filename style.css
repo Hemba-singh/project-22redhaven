@@ -11,6 +11,32 @@
     box-sizing: border-box;
 }
 
+/* Add these styles at the beginning of your CSS */
+html.has-scroll-smooth {
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.has-scroll-smooth body {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+[data-scroll-container] {
+    min-height: 100vh;
+}
+
+[data-scroll-section] {
+    position: relative;
+    overflow: hidden;
+}
+
+
 body {
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
@@ -974,100 +1000,8 @@ body::after {
     .carousel {
         animation: none; /* Disable animation on mobile for performance */
     }
-}/* Base Styles (Already Provided) */
-
-/* Featured Section */
-.featured-section {
-    width: 100%;
-    height: 100vh;
 }
 
-.featured-section .carousel {
-    position: absolute;
-    left: 0;
-    white-space: nowrap;
-    animation: carousel 10s linear var(--carousel_direction, normal) infinite;
-}
-
-.featured-heading {
-    width: 100%;
-    height: 3%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 10px;
-    margin-top: 8%;
-}
-
-.featured-heading h2 {
-    font-family: "Rubik Wet Paint", serif;
-    font-size: 90px;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.featured-container {
-    width: 100%;
-    height: 33%;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 2%;
-}
-
-/* Card Styles */
-.first-card, .second-card, .third-card {
-    width: 270px;
-    height: 256px;
-    background: #f5f5f5;
-    padding: 21px;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: all 0.3s;
-    position: relative;
-}
-
-/* Responsive Styles */
-
-/* Medium Devices (Tablets) */
-@media (max-width: 768px) {
-    .featured-heading h2 {
-        font-size: 60px; /* Adjust font size for tablets */
-    }
-
-    .featured-container {
-        flex-direction: column; /* Stack cards vertically on tablets */
-        align-items: center; /* Center align cards */
-    }
-
-    .first-card, .second-card, .third-card {
-        width: 90%; /* Make cards responsive */
-        margin: 10px 0; /* Add margin between cards */
-    }
-}
-
-/* Small Devices (Mobile Phones) */
-@media (max-width: 480px) {
-    .featured-heading h2 {
-        font-size: 20px; /* Further reduce font size for mobile */
-    }
-
-    .featured-container {
-        flex-direction: column; /* Stack cards vertically on mobile */
-        align-items: center; /* Center align cards */
-        width: 100%;
-        height: 90%;
-    }
-
-    .first-card, .second-card, .third-card {
-        width: 80%; /* Make cards responsive */
-        margin: px 0; /* Add margin between cards */
-    }
-
-    .carousel {
-        animation: none; /* Disable animation on mobile for performance */
-    }
-}
 /* Contact Section */
 .contact-section {
     padding: 10px 60px;
@@ -1272,22 +1206,6 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
 }
 
-/* Remove or comment out these styles */
-
-/* Remove the ::before pseudo-element that creates the dots */
-.menu-item::before {
-    display: none; /* This will hide the dots */
-}
-
-/* Update menu column padding since we don't need space for dots anymore */
-.menu-column.left {
-    padding-right: 40px; /* Reduced from 60px */
-}
-
-.menu-column.right {
-    padding-left: 40px; /* Reduced from 60px */
-}
-
 /* Add these styles */
 #bg-animation {
     position: fixed;
@@ -1299,46 +1217,6 @@ h1, h2, h3, h4, h5, h6 {
     pointer-events: none;
 }
 
-/* Update hero section background */
-.hero {
-    position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
-}
-
-/* Update other sections to have proper background opacity */
-.about-section,
-.menu-section,
-.contact-section {
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1;
-    visibility: visible;
-}
-
-/* Add these styles at the beginning of your CSS */
-html.has-scroll-smooth {
-    overflow: hidden;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
-
-.has-scroll-smooth body {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-}
-
-[data-scroll-container] {
-    min-height: 100vh;
-}
-
-[data-scroll-section] {
-    position: relative;
-    overflow: hidden;
-}
 
 /* Remove any conflicting overflow properties */
 body {

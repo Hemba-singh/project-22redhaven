@@ -2,41 +2,39 @@
 const select = (e) => document.querySelector(e);
 const selectAll = (e) => document.querySelectorAll(e);
 
+
+document.documentElement.classList.add('js-enabled');
+
 // Initialize ScrollTrigger
 function initScrollTrigger() {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
     ScrollTrigger.scrollerProxy("[data-scroll-container]", {
         scrollTop(value) {
             return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
         },
-
         getBoundingClientRect() {
-            return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+            return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
         },
-
         pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed"
     });
 
-    // Add .is-visible class to [data-scroll-section] elements when they come into view
-    const sections = document.querySelectorAll("[data-scroll-section]");
-    sections.forEach((section) => {
-        ScrollTrigger.create({
-            trigger: section,
-            start: "top 80%", // adjust the start position to your liking
-            end: "bottom 20%", // adjust the end position to your liking
-            onEnter: () => section.classList.add("is-visible"),
-            onLeaveBack: () => section.classList.remove("is-visible")
-        });
-    });
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+    ScrollTrigger.refresh();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    initLocomotive();
+    initScrollTrigger();
+});
+
 
 // Initialize Locomotive Scroll
 let locoScroll = null;
+
 function initLocomotive() {
     locoScroll = new LocomotiveScroll({
-        el: select('[data-scroll-container]'),
+        el: document.querySelector('[data-scroll-container]'),
         smooth: true,
         lerp: 0.05,
         multiplier: 0.5,
@@ -54,13 +52,20 @@ function initLocomotive() {
         }
     });
 
-    // Update ScrollTrigger on scroll
-    locoScroll.on("scroll", ScrollTrigger.update);
+    window.addEventListener('load', () => {
+    locoScroll.update();
+});
 
-    // Tell ScrollTrigger to use these proxy methods
-    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+locoScroll.on('resize', () => {
     ScrollTrigger.refresh();
+});
+
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    initLocomotive();
+});
+
 
 // Initialize animations
 function initAnimations() {
@@ -167,51 +172,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-        
+
         if (targetElement) {
-            // Smooth scrolling animation
-            const topOffset = targetElement.getBoundingClientRect().top + window.scrollY;
-            window.scrollTo({
-                top: topOffset,
-                behavior: 'smooth' // This enables smooth scrolling
-            });
+            locoScroll.scrollTo(targetElement);
         }
     });
 });
 
-// Menu Category Filtering with improved transitions
-const initMenuFiltering = () => {
-    const menuCategories = document.querySelectorAll('.menu-category');
-    const menuItems = document.querySelectorAll('.menu-item');
-
-    menuCategories.forEach(category => {
-        category.addEventListener('click', () => {
-            menuCategories.forEach(cat => cat.classList.remove('active'));
-            category.classList.add('active');
-            
-            const selectedCategory = category.dataset.category;
-            
-            menuItems.forEach(item => {
-                const shouldShow = selectedCategory === 'all' || 
-                                 selectedCategory === item.dataset.category;
-                
-                if (shouldShow) {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    }, 10);
-                } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
-                }
-            });
-        });
-    });
-};
 
 // Enhanced Contact Form Handling with improved validation
 const initContactForm = () => {
@@ -307,3 +274,4 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
 });
 });
+
