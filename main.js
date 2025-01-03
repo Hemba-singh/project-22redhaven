@@ -36,7 +36,7 @@ function initLocomotive() {
     locoScroll = new LocomotiveScroll({
         el: document.querySelector('[data-scroll-container]'),
         smooth: true,
-        lerp: 0.05,
+        lerp: 0.5,
         multiplier: 0.5,
         class: 'is-revealed',
         reloadOnContextChange: true,

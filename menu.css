@@ -43,15 +43,16 @@ body::after {
     animation: gradientMove 15s ease infinite;
 }
 
+/* Navigation Bar */
 .navbar {
-   position: fixed;
+    position: fixed;
     top: 8%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 25%;
-    height: 8%;
+    width: 20%;
+    height: 6%;
     padding: 1.5rem 1rem;
-    background: rgba(55, 55, 55, 0.256);
+    background: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,7 +61,7 @@ body::after {
 }
 
 .logo {
-     position: absolute;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -70,22 +71,16 @@ body::after {
 }
 
 .logo-img {
-     background-size:cover;
+    background-size: cover;
     height: 80px;
     width: auto;
     border-radius: 175px;
     transition: all 0.4s ease;
-    filter: drop-shadow(0 0 8px rgba(139, 0, 0, 0.3));
+    filter: drop-shadow(0 0 8px rgb(252, 0, 0));
     gap: 5;
     will-change: transform;
     transform: translateZ(0);
 }
-
-.rotate {
-    transform: rotate(360deg);
-    transition: transform 0.4s ease;
-}
-
 
 .logo-img:hover {
     transform: scale(1.05);
@@ -95,7 +90,7 @@ body::after {
 .nav-links {
     display: flex;
     padding: 0%;
-    gap: 100px;
+    gap: 90px;
     list-style: none;
 }
 
@@ -103,25 +98,15 @@ body::after {
     position: relative;
 }
 
+
 .nav-links a {
-    color: var(--text-color);
+    color: black;
     font-size: 1.5rem;
     text-decoration: none;
     padding: 8px 15px;
     position: relative;
-    font-weight: 500;
+    font-weight: 700;
     transition: all 0.3s ease;
-}
-
-/* Remove default focus outline */
-.nav-links a:focus {
-    outline: none; /* Removes the default focus outline */
-    border: none; /* Ensures no border is shown */
-}
-
-/* Optional: Remove outline on active state as well */
-.nav-links a:active {
-    outline: none; /* Removes outline when the link is active */
 }
 
 .nav-links a::before {
@@ -157,7 +142,6 @@ body::after {
 .nav-links a.active::after {
     width: 50%;
 }
-
 
 .hero-content {
     max-width: 700px;
@@ -645,7 +629,6 @@ body {
 @media (max-width: 768px) {
     .navbar {
         padding: 0.5rem 1rem; /* Adjust padding */
-        flex-direction: column; /* Stack items vertically */
     }
 
     .logo-img {
@@ -654,12 +637,14 @@ body {
     }
 
     .nav-links {
+        width: 100%;
         gap: 1rem; /* Adjust gap */
     }
 
     .nav-links a {
         font-size: 1rem; /* Adjust font size */
         padding: 0.3rem 0.5rem; /* Adjust padding */
+        height: 50px;
     }
 
     .hero-content {
@@ -674,25 +659,31 @@ body {
 /* For very small devices (max-width: 480px) */
 @media (max-width: 480px) {
     .navbar {
-        width: 65%; /* Full width */
+        width: 70%; /* Full width */
+        height: 50px;
+        background: #ffffff;
     }
 
     .nav-links {
-        flex-direction: column; /* Stack links vertically */
-        gap: 0.5rem; /* Adjust gap */
+        gap: 6rem; /* Adjust gap */
     }
 
     .nav-links a {
-        font-size: 0.9rem; /* Adjust font size */
+        font-size: 1.5rem; /* Adjust font size */
+        font-weight: 700;
         padding: 0.2rem 0.4rem; /* Adjust padding */
+        color: #000000;
     }
 
     .hero-content {
-        padding: 10px; /* Reduce padding */
+        margin-top: 140px;
+        padding: 6px; /* Reduce padding */
     }
 
     .card-container {
-        grid-template-columns: 1fr; /* Single column layout */
+        grid-template-columns: 1fr 1fr; /* Single column layout */
+        margin-left: -20px;
+        gap: 30px;
     }
 
     .text-title {
