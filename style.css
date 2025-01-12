@@ -250,6 +250,223 @@ body::after {
     width: 50%;
 }
 
+/* Book Table
+.button {
+    position: fixed;
+    top: 42px; left: 58%;
+    transition: all 0.3s ease-in-out;
+    padding-block: 0.5rem;
+    padding-inline: 1.25rem;
+    background-color: transparent;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #000;
+    gap: 10px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    font-size: 18px;
+    z-index: 1000;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.button:hover .icon {
+    transform: translate(4px);
+}
+
+.modal-container {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000; 
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    top: 7%;
+    left: 36%;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #000000;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #ff0000; 
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-form label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.modal-form input,
+.modal-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.select-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.select-container select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
+
+.select-container select:focus {
+  outline: none;
+  border-color: #aaa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.select-container select option {
+  padding: 10px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.select-container select option:hover {
+  background-color: #f0f0f0;
+}
+
+.select-container select option:checked {
+  background-color: #ccc;
+}
+
+.select-container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #ccc transparent transparent transparent;
+  pointer-events: none;
+}
+
+.select-container select:focus::after {
+  border-color: #aaa transparent transparent transparent;
+}
+
+@media (max-width: 768px) {
+  .select-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .select-container {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.modal-form input:focus,
+.modal-form textarea:focus {
+    border-color: #ff0000;
+}
+
+.modal-form button[type="submit"] {
+    background-color: #ff0000;
+    color: #fff;
+    width: 100px !important;
+    margin-left: 36% !important;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-form button[type="submit"]:hover {
+    background-color: #cc0000;
+}
+@media (max-width: 480px) {
+    .modal {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .modal-header h2 {
+        font-size: 20px;
+    }
+
+    .modal-form input,
+    .modal-form textarea {
+        font-size: 12px;
+    }
+
+    .modal-form button[type="submit"] {
+        font-size: 14px;
+    }
+}
+
 /* Responsive navigation */
 @media (max-width: 768px) {
     .navbar {
@@ -902,6 +1119,7 @@ body::after {
 
 .featured-section .carousel {
     position: absolute;
+    font-size: 6rem;
     left: 0;
     white-space: nowrap;
 
@@ -1044,7 +1262,7 @@ body::after {
 }
 
 .first-card-btn:hover {
-    background-color: greenyellow;
+    background-color: #ff0000;
     color: rgb(35, 35, 35);
 }
 
@@ -1054,7 +1272,7 @@ body::after {
 
 .tag {
     position: absolute;
-    background-color: greenyellow;
+    background-color: #ff0000;
     color: rgb(0, 0, 0);
     left: 12px;
     top: 12px;
@@ -1150,7 +1368,7 @@ body::after {
 }
 
 .second-card-btn:hover {
-    background-color: greenyellow;
+    background-color: #ff0000;
     color: rgb(35, 35, 35);
 }
 
@@ -1160,7 +1378,7 @@ body::after {
 
 .tag {
     position: absolute;
-    background-color: greenyellow;
+    background-color: #ff0000;
     color: rgb(0, 0, 0);
     left: 12px;
     top: 12px;
@@ -1256,7 +1474,7 @@ body::after {
 }
 
 .third-card-btn:hover {
-    background-color: greenyellow;
+    background-color: #ff0000;
     color: rgb(35, 35, 35);
 }
 
@@ -1266,7 +1484,7 @@ body::after {
 
 .tag {
     position: absolute;
-    background-color: greenyellow;
+    background-color: #ff0000;
     color: rgb(0, 0, 0);
     left: 12px;
     top: 12px;
@@ -1405,6 +1623,15 @@ body::after {
     color: var(--text-color);
 }
 
+.contact-heading {
+    text-align: center;/* Center align heading */
+    font-family: Dela Gothic one, serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem;
+    margin-bottom: 60px;
+}
+
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1420,7 +1647,7 @@ body::after {
 }
 
 .info-item {
-    background: rgba(151, 17, 8, 0.1);
+    background: #ff0000;
     padding: 30px;
     border-radius: 10px;
     border: 1px solid var(--primary-color);
@@ -1448,109 +1675,125 @@ body::after {
     line-height: 1.6;
 }
 
-.contact-form {
+/* General Form Styling */
+.modal-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    background: rgba(151, 17, 8, 0.1);
-    padding: 30px;
-    border-radius: 10px;
+    gap: 15px;
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    background: #ff0000;
 }
 
-.contact-form input,
-.contact-form textarea {
-    padding: 15px;
-    border: 1px solid var(--primary-color);
-    border-radius: 5px;
-    background: rgba(0, 0, 0, 0.5);
-    color: var(--text-color);
-    font-size: 1rem;
+.modal-title {
+    text-align: center;
 }
 
-.contact-form textarea {
-    min-height: 150px;
-    resize: vertical;
+/* Label Styling */
+.modal-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-.submit-button {
-    padding: 15px 30px;
-    background: var(--primary-color);
-    color: var(--text-color);
+/* Input and Select Styling */
+.modal-form input {
+    padding: 10px;
+    border-radius: 6px;
     border: none;
-    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    background-color: #000000;
+    color: #fff;
+}
+
+.modal-form select {
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%;
+    color: #fff;
+    background-color: black;
+}
+
+/* Select Container Styling */
+.modal-form .select-container {
+    position: relative;
+}
+
+/* Button Styling */
+.modal-form button {
+    width: 130px;
+    padding: 10px 15px;
+    background-color: #790505;
+    align-self: center;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
+    box-shadow: 5px 5px 17px #cc0000,
+    -5px -5px 17px #ff0000;
 }
 
-.submit-button:hover {
-    background: #a81209;
-    transform: translateY(-2px);
+.modal-form button:hover {
+    background-color: #2a0000;
 }
 
-/* Responsive styles for contact section */
+/* Responsive Styles for Mobile Devices */
 @media (max-width: 768px) {
+    /* Contact Section */
+    .contact-section {
+        padding: 10px 20px; /* Reduce padding for smaller screens */
+    }
+
+    .contact-heading {
+        font-size: 2rem; /* Reduce font size for the heading */
+        margin-bottom: 30px; /* Reduce margin for the heading */
+    }
+
     .contact-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 20px 0;
+        grid-template-columns: 1fr; /* Change to a single column layout */
+        gap: 20px; /* Reduce gap between items */
+        padding: 10px 0; /* Adjust padding */
+    }
+
+    .contact-info {
+        gap: 20px; /* Reduce gap between info items */
     }
 
     .info-item {
-        padding: 20px;
+        padding: 20px; /* Reduce padding for info items */
     }
 
-    .contact-form {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 60px;
-        padding: 20px 0;
+    .info-item i {
+        font-size: 1.5rem; /* Reduce icon size */
     }
 
-    .info-item {
-        padding: 15px;
+    .info-item h3 {
+        font-size: 1rem; /* Reduce heading size */
     }
 
-    .contact-form {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 412px) {
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 60px;
-        padding: 20px 0;
+    .info-item p {
+        font-size: 0.9rem; /* Reduce paragraph font size */
     }
 
-    .info-item {
-        padding: 10px;
+    /* General Form Styling */
+    .modal-form {
+        width: 100%; /* Make the form full width */
+        padding: 15px; /* Adjust padding */
     }
 
-    .contact-form {
-        padding: 10px;
-    }
-}
-
-@media (max-width: 320px) {
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 60px;
-        padding: 20px 0;
+    .modal-form input,
+    .modal-form select {
+        font-size: 12px; /* Reduce font size for inputs and selects */
     }
 
-    .info-item {
-        padding: 10px;
-    }
-
-    .contact-form {
-        padding: 10px;
+    .modal-form button {
+        width: 100%; /* Make the button full width */
+        font-size: 14px; /* Adjust button font size */
     }
 }
 

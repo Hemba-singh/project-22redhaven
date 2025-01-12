@@ -36,7 +36,7 @@ function initLocomotive() {
     locoScroll = new LocomotiveScroll({
         el: document.querySelector('[data-scroll-container]'),
         smooth: true,
-        lerp: 0.5,
+        lerp: 0.1,
         multiplier: 0.5,
         class: 'is-revealed',
         reloadOnContextChange: true,
@@ -274,3 +274,37 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
 });
 });
+
+
+/*
+// Get the modal container and the button
+const modalContainer = document.querySelector('.modal-container');
+const bookTableButton = document.querySelector('.button');
+
+// Get the close modal button
+const closeModalButton = document.querySelector('.close-modal');
+
+// Function to open the modal
+function openModal() {
+  modalContainer.style.display = 'block';
+}
+
+// Function to close the modal
+function closeModal() {
+  modalContainer.style.display = 'none';
+}
+
+// Add event listener to the book table button
+bookTableButton.addEventListener('click', openModal);
+
+// Add event listener to the close modal button
+closeModalButton.addEventListener('click', closeModal);
+
+// Add event listener to the modal container to close the modal when clicked outside
+modalContainer.addEventListener('click', (e) => {
+  if (e.target === modalContainer) {
+    closeModal();
+  }
+});
+
+*/

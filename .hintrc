@@ -8,5 +8,13 @@
     "not and_ff <= 130",
     "not firefox <= 131",
     "not opera <= 114"
-  ]
+  ],
+  "hints": {
+    "axe/forms": [
+      "default",
+      {
+        "select-name": "off"
+      }
+    ]
+  }
 }
